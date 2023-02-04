@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 from labelbox import Client
 
 from soccertrack.dataframe import BBoxDataFrame
-from soccertrack.logger import tqdm
+from soccertrack.logger import tqdm, logger
 
 load_dotenv()
 
@@ -120,13 +120,11 @@ if __name__ == "__main__":
         for export_data in (pbar := tqdm(exports)):
             external_id = Path(export_data["External ID"])
             pbar.set_description(f"Downloading {external_id}")
-            if not str(external_id).startswith("F"):
-                continue
 
             video_url = export_data["Labeled Data"]
             annotations_url = export_data["Label"].get("frames")
             if annotations_url is None:
-                print(f"No annotations for {external_id}")
+                logger.info(f"No annotations for {external_id}")
                 continue
 
             save_dir = save_root / project_name
@@ -140,7 +138,7 @@ if __name__ == "__main__":
 
             try:
                 if mp4_save_path.exists() and not args.overwrite:
-                    print(f"Skipping {external_id} in {project_name}")
+                    logger.info(f"Skipping {external_id} in {project_name}")
                     continue
                 download_video(video_url, mp4_save_path)
                 bbdf = download_annotations(annotations_url, csv_save_path)
@@ -149,6 +147,8 @@ if __name__ == "__main__":
                     bbdf.visualize_frames(mp4_save_path, viz_save_path)
             except Exception as e:
                 if args.ignore_errors:
-                    print(f"Error downloading {external_id} in {project_name}: {e}")
+                    logger.info(
+                        f"Error downloading {external_id} in {project_name}: {e}"
+                    )
                 else:
                     raise e
