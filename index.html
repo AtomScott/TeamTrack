@@ -31,10 +31,7 @@
       content="TeamTrack presents a new algorithm and dataset for multi-object tracking in team sports. It includes over 4 million annotated bounding boxes and provides a comprehensive resource for developing and evaluating MOT algorithms."
     />
     <!-- TODO: Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-    <meta
-      name="twitter:image"
-      content="static/images/banner_image.png"
-    />
+    <meta name="twitter:image" content="static/images/banner_image.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <!-- Keywords for your paper to be indexed by-->
     <meta
@@ -336,7 +333,11 @@
     <section class="hero is-small">
       <div class="hero-body">
         <div class="container">
-          <h2 class="title is-3">Another Carousel</h2>
+          <h2 class="title is-3">TeamTrack Datasets</h2>
+          <h3>
+            <sup>*</sup>The videos are shown are compressed and resized for the
+            website.
+          </h3>
           <div id="results-carousel" class="carousel results-carousel">
             <div class="item item-video1">
               <video
@@ -348,8 +349,11 @@
                 loop
                 height="100%"
               >
-                <!-- Your video file here -->
-                <source src="static/videos/carousel1.mp4" type="video/mp4" />
+                <!-- Basketball sideview video -->
+                <source
+                  src="static/videos/compressed-basketball_sideview.mp4"
+                  type="video/mp4"
+                />
               </video>
             </div>
             <div class="item item-video2">
@@ -362,8 +366,11 @@
                 loop
                 height="100%"
               >
-                <!-- Your video file here -->
-                <source src="static/videos/carousel2.mp4" type="video/mp4" />
+                <!-- Handball sideview video -->
+                <source
+                  src="static/videos/compressed-handball_sideview.mp4"
+                  type="video/mp4"
+                />
               </video>
             </div>
             <div class="item item-video3">
@@ -376,9 +383,45 @@
                 loop
                 height="100%"
               >
-                \
-                <!-- Your video file here -->
-                <source src="static/videos/carousel3.mp4" type="video/mp4" />
+                <!-- Soccer sideview video -->
+                <source
+                  src="static/videos/compressed-soccer_sideview.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+            <div class="item item-video4">
+              <video
+                poster=""
+                id="video4"
+                autoplay
+                controls
+                muted
+                loop
+                height="100%"
+              >
+                <!-- Basketball topview video -->
+                <source
+                  src="static/videos/compressed-basketball_topview.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+            <div class="item item-video5">
+              <video
+                poster=""
+                id="video5"
+                autoplay
+                controls
+                muted
+                loop
+                height="100%"
+              >
+                <!-- Soccer topview video -->
+                <source
+                  src="static/videos/compressed-soccer_topview.mp4"
+                  type="video/mp4"
+                />
               </video>
             </div>
           </div>
