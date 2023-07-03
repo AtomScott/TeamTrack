@@ -272,6 +272,193 @@
     </section>
     <!-- End paper abstract -->
 
+    <!-- Paper abstract -->
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Dataset</h2>
+            <img src="static/images/dataset.png" width="100%" />
+            <div class="content has-text-justified">
+              <p>
+                This paper presents TeamTrack, a new benchmark dataset and
+                algorithm for multi-object tracking (MOT) in team sports,
+                specifically in full-pitch videos. MOT in team sports is a
+                challenging task due to object occlusions, similar appearances,
+                and complex movements. Existing methods often struggle to
+                accurately track objects in these scenarios. To address this
+                challenge, the proposed TeamTrack dataset captures diverse
+                object appearances and movements in soccer, basketball, and
+                handball games using high-resolution fisheye and drone cameras.
+                The dataset includes over 4 million annotated bounding boxes and
+                provides a comprehensive resource for developing and evaluating
+                MOT algorithms. The paper also introduces a new MOT approach
+                that incorporates trajectory forecasting using a graph neural
+                network (GNN) to model complex group movement patterns. The
+                experiments demonstrate the effectiveness of the proposed
+                algorithm on the TeamTrack dataset.
+              </p>
+            </div>
+            <table
+              class="table is-bordered is-narrow is-primary is-striped is-hoverable is-fullwidth"
+            >
+              <caption>
+                Comparison of MOT datasets and TeamTrack.
+              </caption>
+              <thead>
+                <tr>
+                  <th>Dataset</th>
+                  <th>Frames</th>
+                  <th>BBoxes</th>
+                  <th>Domain</th>
+                </tr>
+              </thead>
+              <tr>
+                <td>MOT16</td>
+                <td>11,235</td>
+                <td>292,733</td>
+                <td>Pedestrians</td>
+              </tr>
+              <tr>
+                <td>MOT20</td>
+                <td>13,410</td>
+                <td>2,102,385</td>
+                <td>Pedestrians</td>
+              </tr>
+              <tr>
+                <td>KITTI-T</td>
+                <td>10,870</td>
+                <td>65,213</td>
+                <td>Autonomous<br />Driving</td>
+              </tr>
+              <tr>
+                <td>DanceTrack</td>
+                <td>105,855</td>
+                <td>-</td>
+                <td>Dance</td>
+              </tr>
+              <tr>
+                <td>SSET</td>
+                <td>12,000</td>
+                <td>12,000</td>
+                <td>Soccer</td>
+              </tr>
+              <tr>
+                <td>SN-Tracking</td>
+                <td>225,375</td>
+                <td>3,645,661</td>
+                <td>Soccer</td>
+              </tr>
+              <tr>
+                <td>SportsMOT</td>
+                <td>1879</td>
+                <td>62218</td>
+                <td>Soccer<br />Basketball<br />Volleyball</td>
+              </tr>
+              <tr>
+                <td>SoccerTrack</td>
+                <td>82,800</td>
+                <td>2,484,000</td>
+                <td>Soccer</td>
+              </tr>
+              <tr>
+                <td>
+                  <b>TeamTrack<br />(ours)</b>
+                </td>
+                <td>279,900</td>
+                <td>4,374,900</td>
+                <td>Soccer<br />Basketball<br />Handball</td>
+              </tr>
+            </table>
+            <table
+              class="table is-bordered is-narrow is-primary is-striped is-hoverable is-fullwidth"
+            >
+              <caption>
+                Camera and video details of the multi-object tracking dataset
+                for various sports.
+              </caption>
+              <thead>
+                <tr>
+                  <th>Sport</th>
+                  <th>Camera Type</th>
+                  <th>Location</th>
+                  <th>Device</th>
+                  <th>Resolution</th>
+                  <th>Minutes</th>
+                  <th>Bounding Box Count</th>
+                </tr>
+              </thead>
+              <tr>
+                <td>Soccer</td>
+                <td>Fisheye</td>
+                <td>A University, Outdoor</td>
+                <td>Z CAM E2-F8</td>
+                <td>8K</td>
+                <td>30</td>
+                <td>1,242,000</td>
+              </tr>
+              <tr>
+                <td>Soccer</td>
+                <td>Drone</td>
+                <td>A University, Outdoor</td>
+                <td>DJI Mavic 3</td>
+                <td>4K</td>
+                <td>30</td>
+                <td>1,242,000</td>
+              </tr>
+              <tr>
+                <td>Basketball</td>
+                <td>Fisheye</td>
+                <td>B University, Indoor</td>
+                <td>Z CAM E2-F6</td>
+                <td>6K</td>
+                <td>17.5</td>
+                <td>346,500</td>
+              </tr>
+              <tr>
+                <td>Basketball</td>
+                <td>Drone (Side View)</td>
+                <td>C University, Outdoor</td>
+                <td>DJI Mavic 3</td>
+                <td>4K</td>
+                <td>24</td>
+                <td>475,200</td>
+              </tr>
+              <tr>
+                <td>Basketball</td>
+                <td>Drone (Top View)</td>
+                <td>C University, Outdoor</td>
+                <td>DJI Mavic 3</td>
+                <td>4K</td>
+                <td>24</td>
+                <td>475,200</td>
+              </tr>
+              <tr>
+                <td>Handball</td>
+                <td>Fisheye</td>
+                <td>B University, Indoor</td>
+                <td>Z CAM E2-F6</td>
+                <td>6K</td>
+                <td>30</td>
+                <td>594,000</td>
+              </tr>
+              <tr>
+                <td>Total</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>155.5</td>
+                <td>4,374,900</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End paper abstract -->
+
     <!-- Image carousel -->
     <!-- <section class="hero is-small">
       <div class="hero-body">
@@ -330,10 +517,10 @@
     <!-- End youtube video -->
 
     <!-- Video carousel -->
-    <section class="hero is-small">
+    <section class="hero is-small is-light">
       <div class="hero-body">
-        <div class="container">
-          <h2 class="title is-3">TeamTrack Datasets</h2>
+        <div class="container is-centered has-text-centered">
+          <h2 class="title is-3">Video Preview</h2>
           <h3>
             <sup>*</sup>The videos are shown are compressed and resized for the
             website.
@@ -429,9 +616,203 @@
       </div>
     </section>
     <!-- End video carousel -->
+    <!-- Results -->
+    <section class="section hero">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Tracking Algorithm</h2>
+            <img src="static/images/pipeline.png" width="100%" />
+            <div class="content has-text-justified">
+              <p>
+                The TeamTrack Algorithm is a state-of-the-art method designed
+                for tracking multiple objects in sports scenarios. This
+                innovative algorithm uniquely combines object detection,
+                trajectory forecasting, and data association to accurately
+                maintain identities of various entities, even within dynamic and
+                complex sports environments.
+              </p>
+              <ul>
+                <li>
+                  <strong>Object Detection Model:</strong>
+                  <p>
+                    The algorithm employs a fine-tuned YOLOv8 model for object
+                    detection, renowned for its ability to detect human objects
+                    effectively. This customized model enhances its capability
+                    to differentiate between players, supporters, and referees.
+                  </p>
+                </li>
+                <li>
+                  <strong>Trajectory Forecasting Model:</strong>
+                  <p>
+                    TeamTrack Algorithm uses a Graph Neural Network (GNN) for
+                    trajectory forecasting. This model simulates the
+                    interactions between multiple agents and introduces an
+                    element of randomness. The algorithm also employs the Kalman
+                    filter to smooth the projected trajectories.
+                  </p>
+                </li>
+                <li>
+                  <strong>Data Association Model:</strong>
+                  <p>
+                    This part of the algorithm draws inspiration from both
+                    DeepSORT and ByteTrack, known for handling temporarily
+                    occluded or out-of-frame objects, and predicting objects'
+                    positions in tracklets for the next frame, respectively.
+                  </p>
+                </li>
+              </ul>
+              <p>
+                A distinguishing feature of the TeamTrack Algorithm is its use
+                of a bird's-eye view (BEV) and homography transformation,
+                translating the bottom-center points of detected object
+                boundaries to 2D BEV coordinates. This approach allows effective
+                tracking, given the static camera's ability to capture the
+                entire field and the complex interactions of the players.
+              </p>
+            </div>
+            <table
+              class="table is-bordered is-narrow is-primary is-striped is-hoverable is-fullwidth"
+            >
+              <caption>
+                Performance of the various MOT models.
+              </caption>
+              <caption style="caption-side: top">
+                Football
+              </caption>
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>HOTA</th>
+                  <th>MOTA</th>
+                  <th>IDF1</th>
+                  <th>DetA</th>
+                  <th>AssA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>DeepSORT</td>
+                  <td>53.4</td>
+                  <td>85.5</td>
+                  <td>70.1</td>
+                  <td>63.4</td>
+                  <td>45.7</td>
+                </tr>
+                <tr>
+                  <td>ByteTrack</td>
+                  <td>54.4</td>
+                  <td>86.0</td>
+                  <td>72.7</td>
+                  <td>63.8</td>
+                  <td>47.4</td>
+                </tr>
+                <tr>
+                  <td><b>TeamTrack</b></td>
+                  <td>52.3</td>
+                  <td>85.7</td>
+                  <td>68.5</td>
+                  <td>63.4</td>
+                  <td>43.9</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table
+              class="table is-bordered is-narrow is-primary is-striped is-hoverable is-fullwidth"
+            >
+              <caption style="caption-side: top">
+                Basketball
+              </caption>
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>HOTA</th>
+                  <th>MOTA</th>
+                  <th>IDF1</th>
+                  <th>DetA</th>
+                  <th>AssA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>DeepSORT</td>
+                  <td>47.0</td>
+                  <td>82.3</td>
+                  <td>52.9</td>
+                  <td>68.5</td>
+                  <td>32.3</td>
+                </tr>
+                <tr>
+                  <td>ByteTrack</td>
+                  <td>48.5</td>
+                  <td>82.6</td>
+                  <td>54.4</td>
+                  <td>69.1</td>
+                  <td>34.1</td>
+                </tr>
+                <tr>
+                  <td><b>TeamTrack</b></td>
+                  <td>46.7</td>
+                  <td>82.2</td>
+                  <td>52.8</td>
+                  <td>68.8</td>
+                  <td>31.8</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table
+              class="table is-bordered is-narrow is-primary is-striped is-hoverable is-fullwidth"
+            >
+              <caption style="caption-side: top">
+                Handball
+              </caption>
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>HOTA</th>
+                  <th>MOTA</th>
+                  <th>IDF1</th>
+                  <th>DetA</th>
+                  <th>AssA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>DeepSORT</td>
+                  <td>63.4</td>
+                  <td>82.1</td>
+                  <td>75.8</td>
+                  <td>68.3</td>
+                  <td>59.2</td>
+                </tr>
+                <tr>
+                  <td>ByteTrack</td>
+                  <td>63.8</td>
+                  <td>82.8</td>
+                  <td>75.9</td>
+                  <td>68.7</td>
+                  <td>59.6</td>
+                </tr>
+                <tr>
+                  <td><b>TeamTrack</b></td>
+                  <td>62.7</td>
+                  <td>82.8</td>
+                  <td>74.9</td>
+                  <td>68.5</td>
+                  <td>57.9</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End paper abstract -->
 
     <!-- Paper poster -->
-    <section class="hero is-small is-light">
+    <!-- <section class="hero is-small is-light">
       <div class="hero-body">
         <div class="container">
           <h2 class="title">Poster</h2>
@@ -440,45 +821,17 @@
           </iframe>
         </div>
       </div>
-    </section>
+    </section> -->
     <!--End paper poster -->
 
     <!--BibTex citation -->
     <section class="section" id="BibTeX">
       <div class="container is-max-desktop content">
         <h2 class="title">BibTeX</h2>
-        <pre><code>BibTex Code Here</code></pre>
+        <pre><code>To be anounced</code></pre>
       </div>
     </section>
     <!--End BibTex citation -->
-
-    <footer class="footer">
-      <div class="container">
-        <div class="columns is-centered">
-          <div class="column is-8">
-            <div class="content">
-              <p>
-                This page was built using the
-                <a
-                  href="https://github.com/eliahuhorwitz/Academic-project-page-template"
-                  target="_blank"
-                  >Academic Project Page Template</a
-                >. You are free to borrow the of this website, we just ask that
-                you link back to this page in the footer. <br />
-                This website is licensed under a
-                <a
-                  rel="license"
-                  href="http://creativecommons.org/licenses/by-sa/4.0/"
-                  target="_blank"
-                  >Creative Commons Attribution-ShareAlike 4.0 International
-                  License</a
-                >.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
 
     <!-- Statcounter tracking code -->
 
@@ -501,7 +854,7 @@ https://atomscott.github.io/TeamTrack/ -->
       ><div class="statcounter">
         <a
           title="Web Analytics
-  Made Easy - Statcounter"
+Made Easy - Statcounter"
           href="https://statcounter.com/"
           target="_blank"
           ><img
@@ -511,8 +864,33 @@ https://atomscott.github.io/TeamTrack/ -->
             referrerpolicy="no-referrer-when-downgrade"
         /></a></div
     ></noscript>
-    <!-- End of Statcounter Code -->
     <a href="https://statcounter.com/p12896931/?guest=1">View My Stats</a>
     <!-- End of Statcounter Code -->
+
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+                This page was built using the
+                <a
+                  href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                  target="_blank"
+                  >Academic Project Page Template</a
+                >. This website is licensed under a
+                <a
+                  rel="license"
+                  href="http://creativecommons.org/licenses/by-sa/4.0/"
+                  target="_blank"
+                  >Creative Commons Attribution-ShareAlike 4.0 International
+                  License</a
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
