@@ -27,6 +27,9 @@ body {
   font-family: 'Google Sans', sans-serif;
 }
 
+.tba{
+  text-decoration: line-through
+}
 
 .publication-title {
 }
@@ -68,6 +71,8 @@ body {
 }
 
 .publication-authors {
+  margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 .publication-authors a {
@@ -80,6 +85,8 @@ body {
 
 .author-block {
   display: inline-block;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 .publication-banner img {
