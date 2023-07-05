@@ -1,5 +1,7 @@
 .env
 data
+lightning_logs
+models
 
 # General
 .DS_Store
