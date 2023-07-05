@@ -1,0 +1,34 @@
+# pytorch_lightning==1.9.1
+seed_everything: true
+trainer:
+  logger: true
+  enable_checkpointing: true
+  devices: null
+  gpus: null
+  auto_select_gpus: null
+  enable_progress_bar: true
+  track_grad_norm: -1
+  check_val_every_n_epoch: 1
+  fast_dev_run: false
+  max_epochs: 50
+  accelerator: null
+model:
+  model: 
+    class_path: soccertrack.motion_model.models.lstm.MultiTargetLSTM
+    init_args:
+      input_dim: 44
+      hidden_dim: 64
+      n_layers: 3
+      dropout: 0.2
+  learning_rate: 0.0001
+  roll_out_steps: 144
+  single_agent: false
+data:
+  data_dir: "/Users/atom/Github/TeamTrack/data/trajectory_dataset/F_all"
+  batch_size: 32
+  pin_memory: false
+  num_workers: 4
+  shuffle: true
+  single_agent: false
+  max_num_agents: 22
+ckpt_path: null
