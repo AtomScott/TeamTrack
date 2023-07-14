@@ -1,0 +1,71 @@
+from yacs.config import CfgNode as CN
+
+# YACS overwrite these settings using YAML
+_C = CN()
+
+_C.DATASET = CN()
+
+_C.DATASET.ROOT = "/teamtrack/data/teamtrack"
+_C.DATASET.NAME = "Basketball_SideView"
+_C.DATASET.SUBSET = "train"
+
+
+_C.OUTPUT = CN()
+_C.OUTPUT.ROOT = "/teamtrack/outputs/teamtrack"
+
+
+_C.TRACKER = CN()
+_C.TRACKER.YOLOV8 = CN()
+_C.TRACKER.YOLOV8.NAME = "bytetrack"
+_C.TRACKER.YOLOV8.TRACK_HIGH_THRESH = 0.5  # threshold for the first association
+_C.TRACKER.YOLOV8.TRACK_LOW_THRESH = 0.1  # threshold for the second association
+_C.TRACKER.YOLOV8.NEW_TRACK_THRESH = 0.6  # threshold for init new track if the detection does not match any tracks
+_C.TRACKER.YOLOV8.TRACK_BUFFER = 30  # buffer to calculate the time when to remove tracks
+_C.TRACKER.YOLOV8.MATCH_THRESH = 0.8  # threshold for matching tracks
+
+_C.TRACKER.YOLOV8.CMC_METHOD = "sparseOptFlow"  # method of global motion compensation
+_C.TRACKER.YOLOV8.PROMIXITY_THRESH = 0.5
+_C.TRACKER.YOLOV8.APPEARANCE_THRESH = 0.25
+_C.TRACKER.YOLOV8.WITH_REID = False
+
+_C.TRACKER.YOLOV8.MODEL_PATH = "teamtrack/models/yolov5X.pt"
+
+# TrackEval configuration node
+_C.TRACKEVAL = CN()
+
+# Eval arguments
+_C.TRACKEVAL.EVAL = CN()
+_C.TRACKEVAL.EVAL.USE_PARALLEL = False
+_C.TRACKEVAL.EVAL.NUM_PARALLEL_CORES = 8
+_C.TRACKEVAL.EVAL.BREAK_ON_ERROR = True
+_C.TRACKEVAL.EVAL.PRINT_RESULTS = True
+_C.TRACKEVAL.EVAL.PRINT_ONLY_COMBINED = False
+_C.TRACKEVAL.EVAL.PRINT_CONFIG = True
+_C.TRACKEVAL.EVAL.TIME_PROGRESS = True
+_C.TRACKEVAL.EVAL.OUTPUT_SUMMARY = True
+_C.TRACKEVAL.EVAL.OUTPUT_DETAILED = True
+_C.TRACKEVAL.EVAL.PLOT_CURVES = True
+
+# Dataset arguments
+_C.TRACKEVAL.DATASET = CN()
+_C.TRACKEVAL.DATASET.GT_FOLDER = "data/gt/mot_challenge/"
+_C.TRACKEVAL.DATASET.TRACKERS_FOLDER = "data/trackers/mot_challenge/"
+_C.TRACKEVAL.DATASET.OUTPUT_FOLDER = None
+_C.TRACKEVAL.DATASET.TRACKERS_TO_EVAL = None
+_C.TRACKEVAL.DATASET.CLASSES_TO_EVAL = ["pedestrian"]
+_C.TRACKEVAL.DATASET.BENCHMARK = "MOT17"
+_C.TRACKEVAL.DATASET.SPLIT_TO_EVAL = "train"
+_C.TRACKEVAL.DATASET.INPUT_AS_ZIP = False
+_C.TRACKEVAL.DATASET.PRINT_CONFIG = True
+_C.TRACKEVAL.DATASET.DO_PREPROC = True
+_C.TRACKEVAL.DATASET.TRACKER_SUB_FOLDER = "data"
+_C.TRACKEVAL.DATASET.OUTPUT_SUB_FOLDER = ""
+
+# Metric arguments
+_C.TRACKEVAL.METRICS = CN()
+_C.TRACKEVAL.METRICS.METRICS = ["HOTA", "CLEAR", "Identity", "VACE"]
+_C.TRACKEVAL.METRICS.THRESHOLD = 0.5
+
+
+_C.HPO = CN()
+_C.HPO.N_TRIALS = 10
