@@ -1,7 +1,10 @@
 tmp
 .env
-data
-lightning_logs
+data/
+abci*/
+*.ckpt
+*logs
+ignored/
 models
 
 # General
