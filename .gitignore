@@ -1,5 +1,9 @@
 .env
-data
+data/
+abci*/
+*.ckpt
+*logs
+ignored/
 
 # General
 .DS_Store

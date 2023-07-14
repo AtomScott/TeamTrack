@@ -85,6 +85,9 @@ def download_annotations(annotations_url: str, save_path: str):
             else:
                 team_id, player_id = frame_annotation["title"].split("_")
 
+            if team_id not in [home_team_key, away_team_key, ball_key]:
+                continue
+            
             if d[team_id].get(player_id) is None:
                 d[team_id][player_id] = {}
             d[team_id][player_id][frame_number] = [
@@ -120,8 +123,6 @@ if __name__ == "__main__":
         for export_data in (pbar := tqdm(exports)):
             external_id = Path(export_data["External ID"])
             pbar.set_description(f"Downloading {external_id}")
-            if not str(external_id).startswith("F"):
-                continue
 
             video_url = export_data["Labeled Data"]
             annotations_url = export_data["Label"].get("frames")
