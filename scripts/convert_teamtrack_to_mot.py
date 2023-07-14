@@ -106,7 +106,6 @@ def main(args):
             "val": [],
             "test": [],
         }
-
         # Create directories
         for subset in ["train", "test", "val"]:
             subset_dir = os.path.join(dataset_dir, subset)
@@ -115,14 +114,13 @@ def main(args):
             csv_files = glob(os.path.join(subset_dir, "annotations", "*.csv"))
             dirs[subset] = Parallel(n_jobs=args.n_jobs)(delayed(process_csv_file)(csv_file, output_dir, dataset_name, subset, subset_dir) for csv_file in csv_files)
 
-    dirs["all"] = dirs["train"] + dirs["test"] + dirs["val"]
-    dirs["trainval"] = dirs["train"] + dirs["val"]
+        dirs["all"] = dirs["train"] + dirs["test"] + dirs["val"]
+        dirs["trainval"] = dirs["train"] + dirs["val"]
 
-    # Create sequence files
-    seqmaps_dir = os.path.join(output_dir, "seqmaps")
-    os.makedirs(seqmaps_dir, exist_ok=True)
+        # Create sequence files
+        seqmaps_dir = os.path.join(output_dir, "seqmaps")
+        os.makedirs(seqmaps_dir, exist_ok=True)
 
-    for dataset_name in dataset_names:
         for subset in ["train", "test", "val", "trainval", "all"]:
             seq_file_path = os.path.join(seqmaps_dir, f"{dataset_name}-{subset}.txt")
             with open(seq_file_path, "w", encoding="utf-8") as file:
