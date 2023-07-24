@@ -1,0 +1,20 @@
+DATASET:
+  ROOT: '/Volumes/extra-storage 1/teamtrack/data/teamtrack'
+  NAME: 'Basketball_SideView'
+  SUBSET: 'val'
+
+OUTPUT:
+  ROOT: '/Users/atom/Github/TeamTrack/scripts/benchmark/yolov8/botsort'
+
+TRACKER:
+  YOLOV8:
+    NAME: 'botsort'
+    TRACK_HIGH_THRESH: 0.5
+    TRACK_LOW_THRESH: 0.1
+    NEW_TRACK_THRESH: 0.6
+    TRACK_BUFFER: 30
+    MATCH_THRESH: 0.8
+    MODEL_PATH: '/Users/atom/Github/TeamTrack/models/yolov8/yolov8x.pt'
+
+HPO:
+  N_TRIALS: 10

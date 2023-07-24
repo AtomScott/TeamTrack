@@ -85,6 +85,9 @@ def download_annotations(annotations_url: str, save_path: str):
             else:
                 team_id, player_id = frame_annotation["title"].split("_")
 
+            if team_id not in [home_team_key, away_team_key, ball_key]:
+                continue
+            
             if d[team_id].get(player_id) is None:
                 d[team_id][player_id] = {}
             d[team_id][player_id][frame_number] = [
