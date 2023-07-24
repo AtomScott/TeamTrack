@@ -1,0 +1,3 @@
+[submodule "external/TrackEval"]
+	path = external/TrackEval
+	url = https://github.com/JonathonLuiten/TrackEval.git

@@ -100,6 +100,12 @@ cd teamtrack
 pip install -r requirements.txt
 ```
 
+Also, you will need to add submodules to the external directory. To do this, run the following commands:
+
+```
+git submodule add https://github.com/JonathonLuiten/TrackEval.git external/TrackEval
+```
+
 This project depends on the SoccerTrack repository. You can find it [here](https://github.com/AtomScott/SoccerTrack).
 
 Pre-trained models or weights required for the experiments can be found [here](https://bit.ly/3NYaMWG).
