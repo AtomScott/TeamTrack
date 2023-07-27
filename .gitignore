@@ -5,7 +5,11 @@ abci*/
 *.ckpt
 *logs
 ignored/
+outputs/
+.vscode/
+runs/
 models
+tracking_results*/
 
 # General
 .DS_Store
