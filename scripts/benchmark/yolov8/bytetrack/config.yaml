@@ -8,16 +8,15 @@ OUTPUT:
   OVERWRITE: True
 
 TRACKER:
-  NAME: 'yolov8-botsort'
+  NAME: 'yolov8-bytetrack'
   YOLOV8:
-    TRACKER_TYPE: 'botsort'
+    TRACKER_TYPE: 'bytetrack'
     TRACK_HIGH_THRESH: 0.5
     TRACK_LOW_THRESH: 0.1
     NEW_TRACK_THRESH: 0.6
-    TRACK_BUFFER: 300
+    TRACK_BUFFER: 30
     MATCH_THRESH: 0.8
-    MODEL_PATH: './models/yolov8/yolov8s.pt'
-    CONFIGURATION_PATH: './config' # not used for HPO
+    MODEL_PATH: './models/yolov8/yolov8x.pt'
 
 TRACKEVAL:
   DATASET:
@@ -25,7 +24,7 @@ TRACKEVAL:
     TRACKERS_FOLDER: './outputs/benchmark/hpo/'
     SPLIT_TO_EVAL: 'val'
     BENCHMARK: 'Basketball_SideView2'
-    TRACKERS_TO_EVAL: ['yolov8-botsort']
+    TRACKERS_TO_EVAL: ['yolov8-bytetrack']
+    
 HPO:
   N_TRIALS: 100
-  

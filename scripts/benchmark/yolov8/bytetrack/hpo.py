@@ -34,11 +34,6 @@ def main(cfg):
 
         parameters["match_thresh"] = trial.suggest_float("match_thresh", 0.5, 0.9)
         parameters["new_track_thresh"] = trial.suggest_float("new_track_thresh", parameters["track_high_thresh"], 0.9)
-
-        parameters["cmc_method"] = "sparseOptFlow"
-        parameters["proximity_thresh"] = 0.5 # not used
-        parameters["appearance_thresh"] = 0.25 # not used
-        parameters["with_reid"] = False # not used
         
         parameters['imgsz'] = trial.suggest_int('imgsz', 320, 5120, step=480)
         parameters['vid_stride'] = trial.suggest_int('vid_stride', 1, 10, step=2)
@@ -82,7 +77,7 @@ def main(cfg):
         hota = np.mean([c['HOTA']['HOTA'] for c in output_res["MotChallenge2DBox"][tracker_name]["COMBINED_SEQ"].values()]) * 100
         idf1 = np.mean([c['Identity']['IDF1'] for c in output_res["MotChallenge2DBox"][tracker_name]["COMBINED_SEQ"].values()]) * 100
         total_time = time() - start_time
-        return hota, idf1 # total_time
+        return hota, idf1# total_time
 
     sampler = optuna.samplers.TPESampler(multivariate=True, group=True)
     study_name = f'{cfg.DATASET.NAME}-{cfg.DATASET.SUBSET}-{cfg.TRACKER.NAME}'
