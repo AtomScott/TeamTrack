@@ -53,16 +53,15 @@ I have the code but it's quite scrappy and I don't think it's worth sharing. If 
 
 ### `Basketball_SideView2`
 
-| Model        | Model Link                                                                   | mAP  | Inference Time (ms) |
 | ------------ | ---------------------------------------------------------------------------- | ---- | ------------------- |
-| YOLOv8n-512  | [Download](https://drive.google.com/uc?id=1S6xMmdN2imQC0HgwM5yY4YgFRtAr3Pm3) | 0.66 | 3.27                |
-| YOLOv8n-2048 | [Download](https://drive.google.com/uc?id=1rVunUNHnSt_fOz0XoQ89D5r5i-0f_k2F) | 0.68 | 5.28                |
-| YOLOv8m-512  | [Download](https://drive.google.com/uc?id=1Zpr_TQnH9qjxkS0xQZ5SkM66Pp5S-58K) | 0.67 | 3.58                |
-| YOLOv8m-2048 | [Download](https://drive.google.com/uc?id=1-MjxFtq0c8PFOwJYRJ5nCgtfRAB2KmET) | 0.69 | 17.45               |
-| YOLOv8x-512  | [Download](https://drive.google.com/uc?id=1QTc8LQ8fo0fpAO_C1mdHg6e5gQmdML_n) | 0.68 | 12.32               |
-| YOLOv8x-2048 | [Download](https://drive.google.com/uc?id=1HgTf1nGxD4jx5v17KKoyqzUvq2B4yxSe) | 0.71 | 36.89               |
+| YOLOv8n-512  | [Download](https://drive.google.com/uc?id=1S6xMmdN2imQC0HgwM5yY4YgFRtAr3Pm3) | 0.37 | 3.50                |
+| YOLOv8n-2048 | [Download](https://drive.google.com/uc?id=1rVunUNHnSt_fOz0XoQ89D5r5i-0f_k2F) | 0.52 | 2.88                |
+| YOLOv8m-512  | [Download](https://drive.google.com/uc?id=1Zpr_TQnH9qjxkS0xQZ5SkM66Pp5S-58K) | 0.46 | 5.61                |
+| YOLOv8m-2048 | [Download](https://drive.google.com/uc?id=1-MjxFtq0c8PFOwJYRJ5nCgtfRAB2KmET) | 0.60 | 14.96               |
+| YOLOv8x-512  | [Download](https://drive.google.com/uc?id=1QTc8LQ8fo0fpAO_C1mdHg6e5gQmdML_n) | 0.46 | 8.09                |
+| YOLOv8x-2048 | [Download](https://drive.google.com/uc?id=1HgTf1nGxD4jx5v17KKoyqzUvq2B4yxSe) | 0.61 | 22.17               |
 
-### `Soccer_SideView`
+### `Soccer_TopView`
 
 | Model        | Model Link                                                                   | mAP  | Inference Time (ms) |
 | ------------ | ---------------------------------------------------------------------------- | ---- | ------------------- |
@@ -73,7 +72,7 @@ I have the code but it's quite scrappy and I don't think it's worth sharing. If 
 | YOLOv8x-512  | [Download](https://drive.google.com/uc?id=1PieszMIIICVP0Ntonxr_r6sVWPa17JpD) | 0.19 | 12.08               |
 | YOLOv8x-2048 | [Download](https://drive.google.com/uc?id=1hjiCAinwu5PoilVGU25AGk_bTNocf9MZ) | 0.22 | 101.61              |
 
-### `Soccer_TopView`
+### `Soccer_SideView`
 
 | Model        | Model Link                                                                   | mAP  | Inference Time (ms) |
 | ------------ | ---------------------------------------------------------------------------- | ---- | ------------------- |
