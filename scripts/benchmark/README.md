@@ -83,6 +83,7 @@ The TeamTrack dataset is available for download from this [Google Drive link](in
 | :--------------- | -----: | -----: | -----: | -----: | ---: | -----: | -----: | -----: | -----: | ---: |
 | yolov8-botsort   | 75.195 | 79.219 |  71.44 | 94.332 |  149 | 85.947 | 84.617 |  99.24 | 95.311 |   70 |
 | yolov8-bytetrack | 76.198 | 75.461 | 76.948 | 89.322 |   25 | 88.622 | 85.379 | 99.961 | 89.399 |   69 |
+
 The symbol * indicates that the results are obtained from my own implementation of the algorithm. For other algorithms, the implementation source is specified by the prefix, e.g. `yolov8-` indicates that the results are obtained from the Yolov8 implementation.
 
 After running the scripts, the benchmarking results will be stored in an output file. The README file in each directory provides more information on understanding the output.
