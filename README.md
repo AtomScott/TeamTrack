@@ -1,6 +1,6 @@
 # TeamTrack: An Algorithm and Benchmark Dataset for Multi-Sport Multi-Object Tracking in Full-pitch Videos
 
-> This is a work in progress. The code and dataset will be fully released soon. Stay tuned!
+> This is a work in progress. More code will be released soon. Stay tuned!
 
 ### <a href="https://atomscott.github.io/TeamTrack/" target="_blank">Project</a> | <a href="" target="_blank">Paper</a> | <a href="" target="_blank">Supplementary</a> | <a href="" target="_blank">Arxiv</a> <br>
 
@@ -24,14 +24,10 @@ You can download the TeamTrack dataset from either [Google Drive link](https://d
 
 <div align="center">
   <a href="https://drive.google.com/drive/u/1/folders/1D3jxrEWgWke0l1TWC_052OhYVs2IwDVZ" target="_blank" style="text-decoration: none;">
-    <button style="font-size: 20px; padding: 10px 20px; background-color: #4285F4; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 10px;">
-      <img src="https://www.vectorlogo.zone/logos/google_drive/google_drive-icon.svg" width="20" height="20" style="vertical-align:middle; margin-right: 5px;">Download from Google Drive
-    </button>
+      <img src="./assets/button_download-from-google-drive.png">
   </a>
   <a href="https://www.kaggle.com/datasets/atomscott/teamtrack" target="_blank" style="text-decoration: none;">
-    <button style="font-size: 20px; padding: 10px 20px; background-color: #20BEFF; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 10px;">
-      <img src="https://www.vectorlogo.zone/logos/kaggle/kaggle-icon.svg" width="20" height="20" style="vertical-align:middle; margin-right: 5px;">Download from Kaggle
-    </button>
+      <img src="./assets/button_download-from-kaggle.png">
   </a>
 </div>
 
