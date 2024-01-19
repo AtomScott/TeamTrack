@@ -1,17 +1,18 @@
-
 # TeamTrack: An Algorithm and Benchmark Dataset for Multi-Sport Multi-Object Tracking in Full-pitch Videos
+
 > This is a work in progress. The code and dataset will be fully released soon. Stay tuned!
+
 ### <a href="https://atomscott.github.io/TeamTrack/" target="_blank">Project</a> | <a href="" target="_blank">Paper</a> | <a href="" target="_blank">Supplementary</a> | <a href="" target="_blank">Arxiv</a> <br>
+
 This repository contains the source code and the official benchmark dataset for the paper "TeamTrack: An Algorithm and Benchmark Dataset for Multi-Sport Multi-Object Tracking in Full-pitch Videos" by [Atom Scott](https://twitter.com/AtomJamesScott), et al.
 
 ![](https://raw.githubusercontent.com/AtomScott/TeamTrack/gh-pages/static/images/banner_image.png)
 
-___
-
+---
 
 ## Introduction
 
-TeamTrack presents a new benchmark dataset and a novel algorithm for multi-object tracking (MOT) in team sports. The challenge of object occlusions, similar appearances, and complex movements inherent in team sports necessitated the development of a robust dataset and an algorithm for MOT. The dataset includes full-pitch videos from soccer, basketball, and handball games, captured using fisheye and drone cameras, and contains over 4 million annotated bounding boxes. 
+TeamTrack presents a new benchmark dataset and a novel algorithm for multi-object tracking (MOT) in team sports. The challenge of object occlusions, similar appearances, and complex movements inherent in team sports necessitated the development of a robust dataset and an algorithm for MOT. The dataset includes full-pitch videos from soccer, basketball, and handball games, captured using fisheye and drone cameras, and contains over 4 million annotated bounding boxes.
 
 The algorithm introduced in this paper incorporates trajectory forecasting using a graph neural network (GNN) to model complex group movement patterns in MOT.
 
@@ -21,23 +22,37 @@ The TeamTrack dataset features high-resolution (4K to 8K) full-pitch videos from
 
 You can download the TeamTrack dataset from either [Google Drive link](https://drive.google.com/drive/u/1/folders/1D3jxrEWgWke0l1TWC_052OhYVs2IwDVZ) or [Kaggle](https://www.kaggle.com/datasets/atomscott/teamtrack).
 
-The Google Drive contains three .zip files:
-- `teamtrack-mot.zip`: the TeamTrack tracking data formatted in MOT Challenge style. Refer to the [MOT Challenge official docs](https://github.com/JonathonLuiten/TrackEval/tree/master/docs/MOTChallenge-Official) for more information on this format.
-- `teamtrack.zip`: the TeamTrack tracking data formatted in SoccerTrack style.
+<div align="center">
+  <a href="https://drive.google.com/drive/u/1/folders/1D3jxrEWgWke0l1TWC_052OhYVs2IwDVZ" target="_blank" style="text-decoration: none;">
+    <button style="font-size: 20px; padding: 10px 20px; background-color: #4285F4; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 10px;">
+      <img src="https://www.vectorlogo.zone/logos/google_drive/google_drive-icon.svg" width="20" height="20" style="vertical-align:middle; margin-right: 5px;">Download from Google Drive
+    </button>
+  </a>
+  <a href="https://www.kaggle.com/datasets/atomscott/teamtrack" target="_blank" style="text-decoration: none;">
+    <button style="font-size: 20px; padding: 10px 20px; background-color: #20BEFF; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 10px;">
+      <img src="https://www.vectorlogo.zone/logos/kaggle/kaggle-icon.svg" width="20" height="20" style="vertical-align:middle; margin-right: 5px;">Download from Kaggle
+    </button>
+  </a>
+</div>
+
+The dataset is organized into three main categories, each represented as a folder in Kaggle or a .zip file in Google Drive:
+
+- `teamtrack.zip`: the TeamTrack tracking data formatted in SportsLabKit.
+- `teamtrack-mot-videos`: the TeamTrack tracking data formatted in MOT Challenge style. Refer to the [MOT Challenge official docs](https://github.com/JonathonLuiten/TrackEval/tree/master/docs/MOTChallenge-Official) for more information on this format.
 - `teamtrack-trajectory.zip`: the TeamTrack tracking data projected to pitch coordinates for use as trajectory data.
 
 Each .zip file contains train and validation splits.
 
-Once downloaded, unzip the files. The unzipped directory for `teamtrack` and `teamtrack-trajectory` should look like:
+After downloading and unzipping the files from Google Drive, or downloading the folders from Kaggle, your directory should look like this:
 
 ```
-📁 {teamtrack, teamtrack-trajectory}/
-├─📁 Basketball_SideView/
-├─📁 Basketball_SideView2/
-├─📁 Basketball_TopView/
-├─📁 Handball_SideView/
-├─📁 Soccer_SideView/
-└─📁 Soccer_TopView/
+📁 {teamtrack, teamtrack-trajectory, teamtrack-mot-videos}/
+├─📁 basketball_side/
+├─📁 basketball_side_2/
+├─📁 basketball_top/
+├─📁 handball_side/
+├─📁 soccer_side/
+└─📁 soccer_top/
 ```
 
 For `teamtrack`, each dataset will contain:
@@ -45,11 +60,30 @@ For `teamtrack`, each dataset will contain:
 ```
 📁 {dataset}/
 ├─📁 test/
-│ ├─📁 annotations/ .csv files
-│ └─📁 videos/ .mp4 files
+│ ├─📁 annotations/ # .csv files
+│ └─📁 videos/ # .mp4 files
 ├─📁 train/
 └─📁 val/
 ```
+
+For `teamtrack-mot-videos`, the MOT format is used. This format is widely used in the multi-object tracking community and is compatible with TrackEval. Each dataset will contain:
+
+```
+📁 {dataset}/
+├─📁 test/
+│   ├─📁 {sequence_name_1}
+│   │   ├─📁 gt/
+│   │   │   └─📄 gt.txt # contains ground truth data
+│   │   ├─📁 img1/ # empty folder
+│   │   ├─📄 img1.mp4 # video file for sequence
+│   │   └─📄 seqinfo.ini
+│   │   ...
+│   └─📁 {sequence_name_x}/
+├─📁 train/
+└─📁 val/
+```
+
+The MOT format is a simple text format that contains one object instance per line. Each line in the file represents a single object and contains the following information: frame number, object ID, bounding box coordinates (top-left x, top-left y, width, height), confidence score, class, visibility. For more details, refer to the [MOT Challenge official docs](https://github.com/JonathonLuiten/TrackEval/tree/master/docs/MOTChallenge-Official).
 
 For `teamtrack-trajectory`, each dataset will contain:
 
@@ -61,7 +95,6 @@ For `teamtrack-trajectory`, each dataset will contain:
 ```
 
 Please ensure that your local copy of the dataset matches this structure before running the experiments.
-
 
 ## Getting Started
 
@@ -75,8 +108,8 @@ pip install -r requirements.txt
 
 This project depends on a two other repos of mine:
 
-* [SportsLabKit](https://github.com/AtomScott/SportsLabKit).
-* [TeamTraj](https://github.com/AtomScott/TeamTraj).
+- [SportsLabKit](https://github.com/AtomScott/SportsLabKit).
+- [TeamTraj](https://github.com/AtomScott/TeamTraj).
 
 ## Scripts
 
@@ -106,4 +139,5 @@ If you find our work useful for your research, please consider citing:
 ```
 BibTeX Entry Goes Here (will update in the future)
 ```
+
 We're excited to see the innovative ways this dataset and code will be utilized in the future.
