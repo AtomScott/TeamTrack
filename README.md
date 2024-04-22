@@ -6,7 +6,6 @@ This repository contains the source code and the official benchmark dataset for 
 
 [![TeamTrack dataset banner](https://img.youtube.com/vi/lo85bm9oBcI/0.jpg)](https://www.youtube.com/watch?v=lo85bm9oBcI)
 
-
 ---
 
 ## Introduction
@@ -28,24 +27,31 @@ You can download the TeamTrack dataset from either [Google Drive link](https://d
   </a>
 </div>
 
-The dataset is organized into three main categories, each represented as a folder in Kaggle or a .zip file in Google Drive:
+The dataset is organized into three main categories, each represented as a folder in Kaggle and/or a .zip file in Google Drive:
 
-- `teamtrack.zip`: the TeamTrack tracking data formatted in SportsLabKit.
-- `teamtrack-mot-videos`: the TeamTrack tracking data formatted in MOT Challenge style. Refer to the [MOT Challenge official docs](https://github.com/JonathonLuiten/TrackEval/tree/master/docs/MOTChallenge-Official) for more information on this format.
-- `teamtrack-trajectory.zip`: the TeamTrack tracking data projected to pitch coordinates for use as trajectory data.
+- `teamtrack`: the TeamTrack tracking data formatted in SportsLabKit.
+- `teamtrack-mot`: the TeamTrack tracking data formatted in MOT Challenge style. Refer to the [MOT Challenge official docs](https://github.com/JonathonLuiten/TrackEval/tree/master/docs/MOTChallenge-Official) for more information on this format.
+- `teamtrack-trajectory`: the TeamTrack tracking data projected to pitch coordinates for use as trajectory data.
 
-Each .zip file contains train and validation splits.
-
-After downloading and unzipping the files from Google Drive, or downloading the folders from Kaggle, your directory should look like this:
+After downloading and unzipping the files from Google Drive or Kaggle, your directory for `teamtrack` and `teamtrack-mot` should look like this:
 
 ```
-📁 {teamtrack, teamtrack-trajectory, teamtrack-mot-videos}/
+📁 {teamtrack, teamtrack-mot}/
 ├─📁 basketball_side/
 ├─📁 basketball_side_2/
 ├─📁 basketball_top/
 ├─📁 handball_side/
 ├─📁 soccer_side/
 └─📁 soccer_top/
+```
+
+Since `teamtrack-trajectory` only contains sports recorded with a fixed side-view camera your directory should look like this:
+
+```
+📁 teamtrack-trajectory/
+├─📁 basketball/
+├─📁 handball/
+└─📁 soccer/
 ```
 
 For `teamtrack`, each dataset will contain:
@@ -59,7 +65,7 @@ For `teamtrack`, each dataset will contain:
 └─📁 val/
 ```
 
-For `teamtrack-mot-videos`, the MOT format is used. This format is widely used in the multi-object tracking community and is compatible with TrackEval. Each dataset will contain:
+For `teamtrack-mot`, the MOT format is used. This format is widely used in the multi-object tracking community and is compatible with TrackEval. Each dataset will contain:
 
 ```
 📁 {dataset}/
@@ -82,7 +88,7 @@ For `teamtrack-trajectory`, each dataset will contain:
 
 ```
 📁 {dataset}/
-├─📁 test/ .txt files
+├─📁 test/
 ├─📁 train/
 └─📁 val/
 ```
