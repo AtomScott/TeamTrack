@@ -1,0 +1,31 @@
+DATASET:
+  ROOT: './data/teamtrack'
+  NAME: 'Basketball_SideView2'
+  SUBSET: 'val'
+
+OUTPUT:
+  ROOT: './outputs/benchmark/hpo'
+  OVERWRITE: True
+
+TRACKER:
+  NAME: 'yolov8-botsort'
+  YOLOV8:
+    TRACKER_TYPE: 'botsort'
+    TRACK_HIGH_THRESH: 0.5
+    TRACK_LOW_THRESH: 0.1
+    NEW_TRACK_THRESH: 0.6
+    TRACK_BUFFER: 300
+    MATCH_THRESH: 0.8
+    MODEL_PATH: './models/yolov8/yolov8s.pt'
+    CONFIGURATION_PATH: './config' # not used for HPO
+
+TRACKEVAL:
+  DATASET:
+    GT_FOLDER: './data/teamtrack-mot/'
+    TRACKERS_FOLDER: './outputs/benchmark/hpo/'
+    SPLIT_TO_EVAL: 'val'
+    BENCHMARK: 'Basketball_SideView2'
+    TRACKERS_TO_EVAL: ['yolov8-botsort']
+HPO:
+  N_TRIALS: 100
+  
