@@ -1,0 +1,15 @@
+# Auto-generated config file
+tracker_type: botsort
+match_thresh: 0.7093705404518763
+new_track_thresh: 0.5250384367782102
+track_buffer: 88.0
+track_high_thresh: 0.23194717674452248
+track_low_thresh: 0.10706394330066989
+        
+# BoT-SORT settings
+cmc_method: sparseOptFlow  # method of global motion compensation
+# ReID model related thresh (not supported yet)
+proximity_thresh: 0.5
+appearance_thresh: 0.25
+with_reid: False
+            

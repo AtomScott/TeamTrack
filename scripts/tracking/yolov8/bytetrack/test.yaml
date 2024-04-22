@@ -1,0 +1,32 @@
+DATASET:
+  ROOT: './data/teamtrack'
+  NAME: 'Basketball_SideView2'
+  SUBSET: 'test'
+
+OUTPUT:
+  ROOT: './outputs/benchmark/test'
+  SAVE_EVAL: True
+  SAVE_VIDEO: True
+  OVERWRITE: True
+
+TRACKER:
+  NAME: 'yolov8-bytetrack'
+  YOLOV8:
+    TRACKER_TYPE: 'bytetrack'
+    TRACK_HIGH_THRESH: 0.5
+    TRACK_LOW_THRESH: 0.1
+    NEW_TRACK_THRESH: 0.6
+    TRACK_BUFFER: 30
+    MATCH_THRESH: 0.8
+    CONF: 0.1
+    IMGSZ: 2560
+    VID_STRIDE: 1
+    MODEL_PATH: '/groups/gaa50073/atom/SoccerTrackProject/TeamTrack/models/yolov8/Basketball_SideView2.pt'
+    CONFIGURATION_PATH: 'scripts/benchmark/yolov8/botsort/best_params.yaml' # not used for HPO
+
+TRACKEVAL:
+  DATASET:
+    GT_FOLDER: './data/teamtrack-mot/'
+    TRACKERS_FOLDER: './outputs/benchmark/test/'
+    SPLIT_TO_EVAL: 'test'
+    BENCHMARK: 'Basketball_SideView2'

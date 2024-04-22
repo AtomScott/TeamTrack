@@ -1,0 +1,8 @@
+# Auto-generated config file
+tracker_type: bytetrack
+match_thresh: 0.5070576936662136
+new_track_thresh: 0.7002378428530591
+track_buffer: 63.0
+track_high_thresh: 0.1746786003494707
+track_low_thresh: 0.11803385289701492
+        

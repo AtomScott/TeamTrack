@@ -1,10 +1,8 @@
-# TeamTrack: An Algorithm and Benchmark Dataset for Multi-Sport Multi-Object Tracking in Full-pitch Videos
+# TeamTrack: A Dataset for Multi-Sport Multi-Object Tracking in Full-pitch Videos
 
-> This is a work in progress. More code will be released soon. Stay tuned!
+### <a href="https://atomscott.github.io/TeamTrack/" target="_blank">Project</a> | <a href="" target="_blank">Arxiv</a>
 
-### <a href="https://atomscott.github.io/TeamTrack/" target="_blank">Project</a> | <a href="" target="_blank">Paper</a> | <a href="" target="_blank">Supplementary</a> | <a href="" target="_blank">Arxiv</a> <br>
-
-This repository contains the source code and the official benchmark dataset for the paper "TeamTrack: An Algorithm and Benchmark Dataset for Multi-Sport Multi-Object Tracking in Full-pitch Videos".
+This repository contains the source code and the official benchmark dataset for the paper "TeamTrack: A Dataset for Multi-Sport Multi-Object Tracking in Full-pitch Videos".
 
 ![](https://raw.githubusercontent.com/AtomScott/TeamTrack/gh-pages/static/images/banner_image.png)
 
@@ -12,9 +10,7 @@ This repository contains the source code and the official benchmark dataset for 
 
 ## Introduction
 
-TeamTrack presents a new benchmark dataset and a novel algorithm for multi-object tracking (MOT) in team sports. The challenge of object occlusions, similar appearances, and complex movements inherent in team sports necessitated the development of a robust dataset and an algorithm for MOT. The dataset includes full-pitch videos from soccer, basketball, and handball games, captured using fisheye and drone cameras, and contains over 4 million annotated bounding boxes.
-
-The algorithm introduced in this paper incorporates trajectory forecasting using a graph neural network (GNN) to model complex group movement patterns in MOT.
+Multi-object tracking (MOT) is a critical and challenging task in computer vision, particularly in situations involving objects with similar appearances but diverse movements, as seen in team sports. Current methods, largely reliant on object detection and appearance, often fail to track targets in such complex scenarios accurately. This limitation is further exacerbated by the lack of comprehensive and diverse datasets covering the full view of sports pitches. Addressing these issues, we introduce TeamTrack, a pioneering benchmark dataset specifically designed for MOT in sports. TeamTrack is an extensive collection of full-pitch video data from various sports, including soccer, basketball, and handball. Furthermore, we perform a comprehensive analysis and benchmarking effort to underscore TeamTrack's utility and potential impact. Our work signifies a crucial step forward, promising to elevate the precision and effectiveness of MOT in complex, dynamic settings such as team sports.
 
 ## Dataset
 
@@ -92,22 +88,9 @@ For `teamtrack-trajectory`, each dataset will contain:
 
 Please ensure that your local copy of the dataset matches this structure before running the experiments.
 
-## Getting Started
-
-Before running the experiments, ensure you have installed the necessary dependencies. Clone this repository and set up the environment by following these steps:
-
-```
-git clone https://github.com/atomscott/teamtrack.git
-cd teamtrack
-pip install -r requirements.txt
-```
-
-This project depends on a two other repos of mine:
-
-- [SportsLabKit](https://github.com/AtomScott/SportsLabKit).
-- [TeamTraj](https://github.com/AtomScott/TeamTraj).
-
 ## Scripts
+
+> Currently in preparation.
 
 In the scripts directory, you can find code to reproduce the following experiments described in the paper:
 
@@ -121,10 +104,13 @@ In the scripts directory, you can find code to reproduce the following experimen
 📁 scripts/
 ├─📁 tracking/    # scripts to run benchmarks on detection and tracking
 ├─📁 forecasting/ # scripts to run benchmarks on trajectory forecasting
+├─📁 detection/   # scripts to run object detection
 └─📁 preproc/     # scripts to run preprocessing on data
 ```
 
 ## Notebooks
+
+> Currently in preparation.
 
 Notebooks contatining detailed analysis of the TeamTrack dataset is also provided in the 'notebooks' directory. It includes metrics such as IoU on adjacent frames, frequency of relative position switches, cosine distances of re-identification features, and others.
 
@@ -135,5 +121,3 @@ If you find our work useful for your research, please consider citing:
 ```
 BibTeX Entry Goes Here (will update in the future)
 ```
-
-We're excited to see the innovative ways this dataset and code will be utilized in the future.
