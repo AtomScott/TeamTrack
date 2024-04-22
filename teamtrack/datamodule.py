@@ -22,19 +22,6 @@ from teamtrack.transforms import SportSpecificTransform, Noise
 #     return x, y
 
 
-def single_agent_collate_fn(batch):
-    # batch should be a list of length 8
-    # each element should be a tuple of length 2
-    # each tuple should contain two numpy arrays of shape (seq_len, num_agents, 2)
-
-    # Convert list of numpy arrays to a single numpy array, then convert to PyTorch tensor
-    x_np = np.array([seq for item in batch for seq in rearrange(item[0], "L N D ->  N L D")])
-    x = torch.Tensor(x_np)
-
-    y_np = np.array([seq for item in batch for seq in rearrange(item[1], "L N D ->  N L D")])
-    y = torch.Tensor(y_np)
-
-    return x, y
 
 
 def multi_agent_collate_fn(batch, max_num_agents, dummy_value=-1000):
@@ -216,5 +203,4 @@ class TrajectoryDataModule(pl.LightningDataModule):
 if __name__ == "__main__":
     dataset_name = "F_Soccer_Tsukuba3"
     data_dir = f"/groups/gaa50073/atom/SoccerTrackProject/SoccerTrack_Data/teamtrack/data/{dataset_name}"
-
     dm = TrajectoryDataModule(data_dir)
